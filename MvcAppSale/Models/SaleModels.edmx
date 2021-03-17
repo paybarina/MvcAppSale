@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="saleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="saleModelStoreContainer">
+          <EntitySet Name="mscustomer" EntityType="saleModel.Store.mscustomer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="msfood" EntityType="saleModel.Store.msfood" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sales" EntityType="saleModel.Store.sales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="salesdt" EntityType="saleModel.Store.salesdt" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="mscustomer">
+          <Key>
+            <PropertyRef Name="custcode" />
+          </Key>
+          <Property Name="custcode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="custname" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="address" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="msfood">
+          <Key>
+            <PropertyRef Name="foodcode" />
+          </Key>
+          <Property Name="foodcode" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="foodname" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="price" Type="numeric" Nullable="false" Scale="4" />
+        </EntityType>
+        <EntityType Name="sales">
+          <Key>
+            <PropertyRef Name="transno" />
+            <PropertyRef Name="custcode" />
+          </Key>
+          <Property Name="transno" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="custcode" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="transdate" Type="datetime" />
+          <Property Name="totalamount" Type="numeric" Nullable="false" Scale="4" />
+        </EntityType>
+        <EntityType Name="salesdt">
+          <Key>
+            <PropertyRef Name="transno" />
+            <PropertyRef Name="foodcode" />
+          </Key>
+          <Property Name="transno" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="foodcode" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="qty" Type="int" />
+          <Property Name="amount" Type="numeric" Scale="4" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="saleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="saleModels" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sales" EntityType="saleModel.sale" />
+          <EntitySet Name="salesdts" EntityType="saleModel.salesdt" />
+          <EntitySet Name="mscustomers" EntityType="saleModel.mscustomer" />
+          <EntitySet Name="msfoods" EntityType="saleModel.msfood" />
+        </EntityContainer>
+        <EntityType Name="sale">
+          <Key>
+            <PropertyRef Name="transno" />
+            <PropertyRef Name="custcode" />
+          </Key>
+          <Property Name="transno" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="custcode" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="transdate" Type="DateTime" />
+          <Property Name="totalamount" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="salesdt">
+          <Key>
+            <PropertyRef Name="transno" />
+            <PropertyRef Name="foodcode" />
+          </Key>
+          <Property Name="transno" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="foodcode" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="qty" Type="Int32" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="mscustomer">
+          <Key>
+            <PropertyRef Name="custcode" />
+          </Key>
+          <Property Type="String" Name="custcode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custname" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="msfood">
+          <Key>
+            <PropertyRef Name="foodcode" />
+          </Key>
+          <Property Type="String" Name="foodcode" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="foodname" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="18" Scale="4" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="saleModelStoreContainer" CdmEntityContainer="saleModels">
+          <EntitySetMapping Name="sales">
+            <EntityTypeMapping TypeName="saleModel.sale">
+              <MappingFragment StoreEntitySet="sales">
+                <ScalarProperty Name="transno" ColumnName="transno" />
+                <ScalarProperty Name="custcode" ColumnName="custcode" />
+                <ScalarProperty Name="transdate" ColumnName="transdate" />
+                <ScalarProperty Name="totalamount" ColumnName="totalamount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="salesdts">
+            <EntityTypeMapping TypeName="saleModel.salesdt">
+              <MappingFragment StoreEntitySet="salesdt">
+                <ScalarProperty Name="transno" ColumnName="transno" />
+                <ScalarProperty Name="foodcode" ColumnName="foodcode" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mscustomers">
+            <EntityTypeMapping TypeName="saleModel.mscustomer">
+              <MappingFragment StoreEntitySet="mscustomer">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="custname" ColumnName="custname" />
+                <ScalarProperty Name="custcode" ColumnName="custcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="msfoods">
+            <EntityTypeMapping TypeName="saleModel.msfood">
+              <MappingFragment StoreEntitySet="msfood">
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="foodname" ColumnName="foodname" />
+                <ScalarProperty Name="foodcode" ColumnName="foodcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SaleModels">
+        <EntityTypeShape EntityType="saleModel.sale" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="saleModel.salesdt" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="saleModel.mscustomer" Width="1.5" PointX="0.75" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="saleModel.msfood" Width="1.5" PointX="2.75" PointY="3.75" Height="1.5956835937499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

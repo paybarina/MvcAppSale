@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="saleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="saleModelStoreContainer">
+    <EntitySet Name="mscustomer" EntityType="saleModel.Store.mscustomer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="msfood" EntityType="saleModel.Store.msfood" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sales" EntityType="saleModel.Store.sales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="salesdt" EntityType="saleModel.Store.salesdt" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="mscustomer">
+    <Key>
+      <PropertyRef Name="custcode" />
+    </Key>
+    <Property Name="custcode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="custname" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="address" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="phone" Type="varchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="msfood">
+    <Key>
+      <PropertyRef Name="foodcode" />
+    </Key>
+    <Property Name="foodcode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="foodname" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="price" Type="numeric" Nullable="false" Scale="4" />
+  </EntityType>
+  <EntityType Name="sales">
+    <Key>
+      <PropertyRef Name="transno" />
+      <PropertyRef Name="custcode" />
+    </Key>
+    <Property Name="transno" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="custcode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="transdate" Type="datetime" />
+    <Property Name="totalamount" Type="numeric" Nullable="false" Scale="4" />
+  </EntityType>
+  <EntityType Name="salesdt">
+    <Key>
+      <PropertyRef Name="transno" />
+      <PropertyRef Name="foodcode" />
+    </Key>
+    <Property Name="transno" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="foodcode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="qty" Type="int" />
+    <Property Name="amount" Type="numeric" Scale="4" />
+  </EntityType>
+</Schema>

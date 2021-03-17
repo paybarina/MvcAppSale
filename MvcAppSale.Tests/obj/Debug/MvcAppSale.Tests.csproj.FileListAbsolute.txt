@@ -1,0 +1,8 @@
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\bin\Debug\MvcAppSale.Tests.dll.config
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\bin\Debug\MvcAppSale.Tests.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\bin\Debug\MvcAppSale.Tests.pdb
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\bin\Debug\MvcAppSale.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\bin\Debug\MvcAppSale.pdb
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\obj\Debug\MvcAppSale.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\obj\Debug\MvcAppSale.Tests.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale.Tests\obj\Debug\MvcAppSale.Tests.pdb

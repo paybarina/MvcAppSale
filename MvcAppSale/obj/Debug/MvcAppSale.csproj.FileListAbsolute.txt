@@ -1,0 +1,9 @@
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\bin\MvcAppSale.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\bin\MvcAppSale.pdb
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\bin\EntityFramework.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\bin\EntityFramework.SqlServer.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\bin\EntityFramework.xml
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\bin\EntityFramework.SqlServer.xml
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\obj\Debug\MvcAppSale.csprojResolveAssemblyReference.cache
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\obj\Debug\MvcAppSale.dll
+C:\Users\Dara\Desktop\abc\MvcAppSale\MvcAppSale\obj\Debug\MvcAppSale.pdb

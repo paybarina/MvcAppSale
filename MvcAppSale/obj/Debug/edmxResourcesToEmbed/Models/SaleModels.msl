@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="saleModelStoreContainer" CdmEntityContainer="saleModels">
+    <EntitySetMapping Name="sales">
+      <EntityTypeMapping TypeName="saleModel.sale">
+        <MappingFragment StoreEntitySet="sales">
+          <ScalarProperty Name="transno" ColumnName="transno" />
+          <ScalarProperty Name="custcode" ColumnName="custcode" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="totalamount" ColumnName="totalamount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salesdts">
+      <EntityTypeMapping TypeName="saleModel.salesdt">
+        <MappingFragment StoreEntitySet="salesdt">
+          <ScalarProperty Name="transno" ColumnName="transno" />
+          <ScalarProperty Name="foodcode" ColumnName="foodcode" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mscustomers">
+      <EntityTypeMapping TypeName="saleModel.mscustomer">
+        <MappingFragment StoreEntitySet="mscustomer">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="custname" ColumnName="custname" />
+          <ScalarProperty Name="custcode" ColumnName="custcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msfoods">
+      <EntityTypeMapping TypeName="saleModel.msfood">
+        <MappingFragment StoreEntitySet="msfood">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="foodname" ColumnName="foodname" />
+          <ScalarProperty Name="foodcode" ColumnName="foodcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
