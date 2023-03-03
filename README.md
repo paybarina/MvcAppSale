@@ -1,2 +1,2 @@
 # MvcAppSale
-Aplikasi Penjualan PT.ABC
+Aplikasi Penjualan Barang
